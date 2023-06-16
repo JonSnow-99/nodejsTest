@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>main 화면 | site예제 </title>
+
+    <!-- css  -->
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/themify-icons.css">
+    <link rel="stylesheet" href="./assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./assets/css/fonts.css">
+    <link rel="stylesheet" href="./assets/css/reset.css"> 
+    
+</head>
+
+
+<body>
+    <div id="wrap">
+        <header class="header"></header>
+        <!-- 배너 부분 시작 -->
+        <section id="banner">
+            <div class="ban-img"></div>
+        </section>
+
+        <div id="content"></div>
+        <footer id="footer">
+            <div class="container">
+                <div class="footer-wrap">
+                    <div>
+                        <h3>layout영역</h3>
+                        <ul>
+                            <li><a href="#">layout 유형</a></li>
+                            <li><a href="#">layout 유형</a></li>
+                            <li><a href="#">layout 유형</a></li>
+                            <li><a href="#">layout 유형</a></li>
+                            <li><a href="#">layout 유형</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>menu 영역</h3>
+                        <ul>
+                            <li><a href="#">메뉴유형1</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>main 영역</h3>
+                        <ul>
+                            <li><a href="#">이미지 유형</a></li>
+                            <li><a href="#">동영상 유형</a></li>
+                            <li><a href="#">슬라이드 유형</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>contents 영역</h3>
+                        <ul>
+                            <li><a href="#">텍스트 유형</a></li>
+                            <li><a href="#">이미지2 유형</a></li>
+                            <li><a href="#">이미지/텍스트 유형</a></li>
+                            <li><a href="#">카드유형 유형</a></li>
+                            <li><a href="#">배너유형 유형</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>footer 영역</h3>
+                        <ul>
+                            <li><a href="#">contents 유형</a></li>
+                            <li><a href="#">footer 유형</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>site 영역</h3>
+                        <ul>
+                            <li><a href="#">웹표준 유형</a></li>
+                            <li><a href="#">반응형 유형</a></li>
+                            <li><a href="#">패럴랙스 유형</a></li>
+                            <li><a href="#">포트폴리오 유형</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-rights">
+                    <address>@ 2023 web test, All rights reserved.
+                    <div class="footer-sns">
+                        <ul>
+                            <li><a href="#" class="ir_pm"></a>페이스북</li>
+                            <li><a href="#" class="ir_pnm"></a>인스타그램</li>
+                            <li><a href="https://github.com/skynate22" class="ir_pm"></a>깃허브</li>
+                            <li><a href="" class="ir_pm"></a>블로그</li>
+                        </ul>
+                    </div>
+                    </address>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+    <!-- script  -->
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=9072a8bb4b56b5b44afb6d6d37a0b2e7">
+    </script>
+    <script src="./assets/js/header.js"></script>
+    <script>
+        const cookies = "<%= cookie %>";
+        if (cookies === "false") {
+            document.querySelector(".log").innerHTML = "로그인";
+            document.querySelector(".log").href = "/login";
+        } else {
+            document.querySelector(".log").innerHTML = "로그아웃";
+            document.querySelector(".log").href = "/logout";
+        }
+    </script>
+</body>
+</html>
