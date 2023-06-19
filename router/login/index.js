@@ -6,7 +6,7 @@ var mysql2 = require('mysql2');
 var crypto = require('crypto');
 var cookie = require('cookie-parser');
 //const { has } = require('cheerio/lib/api/traversing');
-const salt = crypto.randomBytes(128).toString('base64');
+
 
 
 
@@ -16,7 +16,7 @@ var connection = mysql2.createConnection({
     user: 'root',
     password: 'nbis2023',
     port: '3306',
-    database: 'mysql'
+    database: 'testnodejs'
 });
 
 
@@ -33,9 +33,10 @@ router.post('/', function (req, res, next){
     var id = req.body.id;
     var pw = req.body.pw;
 
-    var query = "select salt, password from member where userid='"+ id +"';"
+    var query = "select password from member where userid='" + id + "';"
     console.log(query);
     connection.query(query, function (err, rows){
+        console.log('xxxxxx', rows)
         if(err) throw err;
         else{
             if(rows.length == 0) {
@@ -43,9 +44,13 @@ router.post('/', function (req, res, next){
                 res.redirect("/login");
             } else{
 
-                var salt = rows[0].salt;
+//                var salt = rows[0].salt;
                 var password = rows[0].password;
-                const hashPassword = crypto.createHash('sha512').update(pw + salt).digest('hex');
+
+                const salt = crypto.randomBytes(128).toString('base64');
+                const hashPassword = crypto.createHash('sha512').update(pw).digest('hex');
+
+                console.log(hashPassword, rows[0].password, hashPassword === rows[0].password)
                 if(password === hashPassword) {
                     console.log("로그인 성공");
                     res.cookie("user", id, {
